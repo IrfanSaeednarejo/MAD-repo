@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-// ── LIGHT THEME ───────────────────────────────────────────────────────────────
 const G = {
-  bg:        "#0D1117",   // github dark background
+  bg:        "#0D1117",   
   panel:     "#111827",   // deep panel
   card:      "#161B22",   // card surface
   border:    "#21262D",   // github style border
