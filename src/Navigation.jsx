@@ -1142,7 +1142,6 @@ navController.navigate(
   );
 }
 
-// ── APP SHELL ─────────────────────────────────────────────────────────────────
 export default function Lecture4Guide() {
   const [active, setActive] = useState("intents");
   const navigate = useNavigate();
@@ -1169,7 +1168,6 @@ export default function Lecture4Guide() {
   return (
     <div style={{ background: G.bg, minHeight: "100vh", fontFamily: "'Trebuchet MS', Tahoma, sans-serif", color: G.text, display: "flex", flexDirection: "column" }}>
 
-      {/* Header */}
       <div style={{ background: G.panel, borderBottom: `1px solid ${G.border}`, padding: "14px 24px", display: "flex", alignItems: "center", gap: 14, boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}>
         <div style={{ width: 36, height: 36, borderRadius: 10, background: G.greenBg, border: `1.5px solid ${G.green}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>🧭</div>
         <div>
@@ -1183,7 +1181,6 @@ export default function Lecture4Guide() {
       </div>
 
       <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
-        {/* Sidebar */}
         <div style={{ width: 210, flexShrink: 0, background: G.panel, borderRight: `1px solid ${G.border}`, padding: "16px 0", overflowY: "auto" }}>
           {groups.map(({ label, ids }) => (
             <div key={label}>
@@ -1208,7 +1205,6 @@ export default function Lecture4Guide() {
             </div>
           ))}
 
-          {/* Quick reference */}
           <div style={{ margin: "20px 14px 0", padding: "14px", background: G.card, border: `1px solid ${G.border}`, borderRadius: 10 }}>
             <div style={{ fontSize: 10, color: G.muted, letterSpacing: "1px", textTransform: "uppercase", fontFamily: "monospace", marginBottom: 10 }}>Quick Ref</div>
             {[
@@ -1226,7 +1222,6 @@ export default function Lecture4Guide() {
           </div>
         </div>
 
-        {/* Content */}
         <div style={{ flex: 1, overflowY: "auto", padding: "32px 36px", maxWidth: 860 }}>
           {render()}
         </div>

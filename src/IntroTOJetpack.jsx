@@ -2,30 +2,26 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const G = {
-  // Base backgrounds
-  bg: "#0D1117",        // GitHub dark background
-  panel: "#161B22",     // sidebar / header
-  card: "#1C2128",      // cards / blocks
-  border: "#30363D",    // subtle borders
+  bg: "#0D1117",        
+  panel: "#161B22",    
+  card: "#1C2128",     
+  border: "#30363D",    
   amber:    "#F59E0B",
   teal:     "#2DD4BF",
 
-  // Accent (modern neon feel like Lazarev)
-  accent: "#3B82F6",    // electric blue primary
+  accent: "#3B82F6",    
   accentDim: "#2563EB",
   accentGlow: "#3B82F633",
 
-  // Supporting colors
   yellow: "#FACC15",
   blue: "#60A5FA",
   purple: "#A78BFA",
   red: "#F87171",
   orange: "#FB923C",
 
-  // Typography
-  text: "#E6EDF3",      // GitHub primary text
-  muted: "#8B949E",     // secondary text
-  faint: "#21262D",     // separators / subtle backgrounds
+  text: "#E6EDF3",   
+  muted: "#8B949E",   
+  faint: "#21262D",   
 };
 const sections = [
   { id: "overview", icon: "⚡", label: "Compose vs XML" },
@@ -90,7 +86,6 @@ const Divider = ({ label }) => (
   </div>
 );
 
-// ── SECTION CONTENT ──────────────────────────────────────────────────────────
 
 function OverviewSection() {
   const rows = [
@@ -999,7 +994,6 @@ if (showDialog) {
   );
 }
 
-// ── APP SHELL ─────────────────────────────────────────────────────────────────
 
 export default function Lecture2Guide() {
   const [active, setActive] = useState("overview");
@@ -1016,7 +1010,6 @@ export default function Lecture2Guide() {
   };
   return (
     <div style={{ background: G.bg, minHeight: "100vh", fontFamily: "'Trebuchet MS', Tahoma, sans-serif", color: G.text, display: "flex", flexDirection: "column" }}>
-      {/* Header */}
       <div style={{ background: G.panel, borderBottom: `1px solid ${G.border}`, padding: "14px 24px", display: "flex", alignItems: "center", gap: 16 }}>
         <div style={{ width: 32, height: 32, borderRadius: 8, background: G.accentGlow, border: `1px solid ${G.accent}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }}>🤖</div>
         <div>
@@ -1029,7 +1022,6 @@ export default function Lecture2Guide() {
         </div>
       </div>
       <div style={{ display: "flex", flex: 1 }}>
-        {/* Sidebar */}
         <div style={{ width: 200, flexShrink: 0, background: G.panel, borderRight: `1px solid ${G.border}`, padding: "16px 0" }}>
           {sections.map(({ id, icon, label }) => (
             <button key={id} onClick={() => setActive(id)} style={{
@@ -1052,7 +1044,6 @@ export default function Lecture2Guide() {
             ))}
           </div>
         </div>
-        {/* Content */}
         <div style={{ flex: 1, overflowY: "auto", padding: "32px 36px", maxWidth: 860 }}>
           {renderSection()}
         </div>
