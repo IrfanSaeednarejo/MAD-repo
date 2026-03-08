@@ -3,19 +3,18 @@ import { useNavigate } from "react-router-dom";
 
 const G = {
   bg:        "#0D1117",   
-  panel:     "#111827",   // deep panel
-  card:      "#161B22",   // card surface
-  border:    "#21262D",   // github style border
-  faint:     "#1F2933",   // subtle surfaces
+  panel:     "#111827",   
+  card:      "#161B22",   
+  border:    "#21262D",   
+  faint:     "#1F2933",   
   
-  text:      "#E6EDF3",   // github main text
-  muted:     "#8B949E",   // muted text
+  text:      "#E6EDF3",   
+  muted:     "#8B949E",   
   slate:     "#94A3B8",
 
-  code:      "#7EE787",   // neon green code text
-  codeBg:    "#0F1A12",   // dark greenish code block
+  code:      "#7EE787",   
+  codeBg:    "#0F1A12",   
 
-  // accent palette (Lazarev-inspired neon accents)
   green:     "#4ADE80",
   greenBg:   "#4ADE8020",
 
@@ -47,7 +46,6 @@ const sections = [
   { id: "args",         icon: "📦", label: "Passing Arguments" },
 ];
 
-// ── SHARED PRIMITIVES ─────────────────────────────────────────────────────────
 const Code = ({ code }) => (
   <pre style={{
     background: G.codeBg, border: `1px solid ${G.border}`,
@@ -128,7 +126,6 @@ const StepBadge = ({ n, color }) => (
   }}>{n}</div>
 );
 
-// ── SECTIONS ──────────────────────────────────────────────────────────────────
 
 function IntentsSection() {
   return (
