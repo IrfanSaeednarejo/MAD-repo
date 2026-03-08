@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const G = {
   // Base backgrounds
@@ -1002,6 +1003,7 @@ if (showDialog) {
 
 export default function Lecture2Guide() {
   const [active, setActive] = useState("overview");
+  const navigate = useNavigate();
   const renderSection = () => {
     switch (active) {
       case "overview": return <OverviewSection />;
@@ -1022,8 +1024,8 @@ export default function Lecture2Guide() {
           <div style={{ fontSize: 15, fontWeight: 800, color: G.text, letterSpacing: "-0.3px" }}>Lecture 2 — Introduction to Jetpack Compose</div>
         </div>
         <div style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
-          <span style={{ fontSize: 11, background: G.amberBg, color: G.amber, border: `1px solid ${G.amber}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>← Lecture 2: Compose Basics</span>
-          <span style={{ fontSize: 11, background: G.tealBg, color: G.teal, border: `1px solid ${G.teal}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>Lecture 4: Navigation →</span>
+          <span style={{ cursor: "pointer",fontSize: 11, background: G.amberBg, color: G.amber, border: `1px solid ${G.amber}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>Series Begins →</span>
+          <span onClick={()=>navigate("/Lecture03")} style={{ cursor: "pointer", fontSize: 11, background: G.tealBg, color: G.teal, border: `1px solid ${G.teal}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>Lecture 3: State Management →</span>
         </div>
       </div>
       <div style={{ display: "flex", flex: 1 }}>

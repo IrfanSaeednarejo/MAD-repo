@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // ── LIGHT THEME TOKENS ────────────────────────────────────────────────────────
 const G = {
@@ -826,6 +827,7 @@ fun WaterScreen(viewModel: WaterViewModel = hiltViewModel()) {
 // ── APP SHELL ─────────────────────────────────────────────────────────────────
 export default function Lecture3Guide() {
   const [active, setActive] = useState("whatisstate");
+  const navigate = useNavigate();
 
   const renderSection = () => {
     switch (active) {
@@ -850,8 +852,8 @@ export default function Lecture3Guide() {
           <div style={{ fontSize: 15, fontWeight: 800, color: G.text, letterSpacing: "-0.3px" }}>Lecture 3 — Jetpack Compose State Management</div>
         </div>
         <div style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
-          <span style={{ fontSize: 11, background: G.amberBg, color: G.amber, border: `1px solid ${G.amber}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>← Lecture 2: Compose Basics</span>
-          <span style={{ fontSize: 11, background: G.tealBg, color: G.teal, border: `1px solid ${G.teal}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>Lecture 4: Navigation →</span>
+          <span onClick={()=>navigate("/Lecture02")}style={{ cursor: "pointer",fontSize: 11, background: G.amberBg, color: G.amber, border: `1px solid ${G.amber}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>← Lecture 2: Compose Basics</span>
+          <span onClick={()=>navigate("/Lecture04")}style={{ cursor: "pointer",fontSize: 11, background: G.tealBg, color: G.teal, border: `1px solid ${G.teal}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>Lecture 4: Navigation →</span>
         </div>
       </div>
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 
 const G = {
   bg:        "#0D1117",   
@@ -6,7 +7,7 @@ const G = {
   card:      "#161B22",   // card surface
   border:    "#21262D",   // github style border
   faint:     "#1F2933",   // subtle surfaces
-
+  
   text:      "#E6EDF3",   // github main text
   muted:     "#8B949E",   // muted text
   slate:     "#94A3B8",
@@ -1144,6 +1145,7 @@ navController.navigate(
 // ── APP SHELL ─────────────────────────────────────────────────────────────────
 export default function Lecture4Guide() {
   const [active, setActive] = useState("intents");
+  const navigate = useNavigate();
 
   const render = () => {
     switch (active) {
@@ -1175,8 +1177,8 @@ export default function Lecture4Guide() {
           <div style={{ fontSize: 15, fontWeight: 800, color: G.text, letterSpacing: "-0.3px" }}>Lecture 4 — Jetpack Compose Navigation</div>
         </div>
         <div style={{ marginLeft: "auto", display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "flex-end" }}>
-          <span style={{ fontSize: 11, background: G.amberBg, color: G.amber, border: `1px solid ${G.amber}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>← L3: State Mgmt</span>
-          <span style={{ fontSize: 11, background: G.blueBg, color: G.blue, border: `1px solid ${G.blue}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>Series complete ✓</span>
+          <span onClick={()=>navigate("/Lecture03")}style={{ cursor: "pointer", fontSize: 11, background: G.amberBg, color: G.amber, border: `1px solid ${G.amber}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>← L3: State Mgmt</span>
+          <span onClick={()=>navigate("/Lecture04")}style={{ cursor: "pointer", fontSize: 11, background: G.blueBg, color: G.blue, border: `1px solid ${G.blue}30`, padding: "3px 10px", borderRadius: 20, fontFamily: "monospace" }}>Series complete ✓</span>
         </div>
       </div>
 
