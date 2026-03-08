@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// ── LIGHT THEME TOKENS ────────────────────────────────────────────────────────
 const G = {
-  // Base surfaces
-  bg:       "#0D1117",   // main background
-  panel:    "#161B22",   // panels
-  card:     "#1C2128",   // cards
+  bg:       "#0D1117",   
+  panel:    "#161B22",  
+  card:     "#1C2128",  
   border:   "#30363D",
   borderMd: "#484F58",
 
-  // Accents
   teal:     "#2DD4BF",
   tealDim:  "#14B8A6",
   tealBg:   "#2DD4BF12",
@@ -27,15 +24,12 @@ const G = {
   emerald:  "#34D399",
   emeraldBg:"#34D39914",
 
-  // Neutral tones
   slate:    "#94A3B8",
   muted:    "#8B949E",
   faint:    "#21262D",
 
-  // Text
   text:     "#E6EDF3",
 
-  // Code styling
   code:     "#7EE787",
   codeBg:   "#161B22",
 };
@@ -49,7 +43,6 @@ const sections = [
   { id: "hoisting",     icon: "🏗️", label: "State Hoisting" },
 ];
 
-// ── SHARED UI PRIMITIVES ──────────────────────────────────────────────────────
 const Code = ({ code }) => (
   <pre style={{
     background: G.codeBg, border: `1px solid ${G.border}`,
@@ -128,7 +121,6 @@ const Pill = ({ label, active, color, onClick }) => (
   }}>{label}</button>
 );
 
-// ── SECTIONS ──────────────────────────────────────────────────────────────────
 
 function WhatIsStateSection() {
   const examples = [
@@ -269,7 +261,6 @@ fun LikeButton(postId: String, viewModel: PostViewModel) {
 }
 
 function RememberSection() {
-  const [demo, setDemo] = useState(0);
   return (
     <div>
       <SectionHeader title="The remember API" badge="Lecture 3 · Memory"
@@ -843,8 +834,6 @@ export default function Lecture3Guide() {
 
   return (
     <div style={{ background: G.bg, minHeight: "100vh", fontFamily: "'Trebuchet MS', Tahoma, sans-serif", color: G.text, display: "flex", flexDirection: "column" }}>
-
-      {/* Header */}
       <div style={{ background: G.panel, borderBottom: `1px solid ${G.border}`, padding: "14px 24px", display: "flex", alignItems: "center", gap: 14, boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}>
         <div style={{ width: 36, height: 36, borderRadius: 10, background: G.tealBg, border: `1.5px solid ${G.teal}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>🧠</div>
         <div>
@@ -858,7 +847,6 @@ export default function Lecture3Guide() {
       </div>
 
       <div style={{ display: "flex", flex: 1 }}>
-        {/* Sidebar */}
         <div style={{ width: 210, flexShrink: 0, background: G.panel, borderRight: `1px solid ${G.border}`, padding: "20px 0" }}>
           {sections.map(({ id, icon, label }) => (
             <button key={id} onClick={() => setActive(id)} style={{
@@ -873,8 +861,6 @@ export default function Lecture3Guide() {
               </div>
             </button>
           ))}
-
-          {/* Quick reference card */}
           <div style={{ margin: "24px 14px 0", padding: "14px", background: G.card, border: `1px solid ${G.border}`, borderRadius: 10 }}>
             <div style={{ fontSize: 10, color: G.muted, letterSpacing: "1px", textTransform: "uppercase", fontFamily: "monospace", marginBottom: 10 }}>Quick Reference</div>
             {[
@@ -890,8 +876,6 @@ export default function Lecture3Guide() {
             ))}
           </div>
         </div>
-
-        {/* Main content */}
         <div style={{ flex: 1, overflowY: "auto", padding: "32px 36px", maxWidth: 860 }}>
           {renderSection()}
         </div>
