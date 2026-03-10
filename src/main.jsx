@@ -7,7 +7,7 @@ import StateManagement from './StateManagement.jsx'
 import Navigation from './Navigation.jsx'
 import LandingPage from './LandingPage.jsx'
 import Difference from './Difference.jsx'
-
+import UIComponents from './UIComponents.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,6 +19,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Lecture04" element={<Navigation />} />
         <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/difference" element={<Difference />} />
+        <Route path="/ui-components" element={<UIComponents />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
